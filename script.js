@@ -26,3 +26,17 @@ if (operator === '+') {
 } else if (operator = '/') { 
     return divide(x, y);
 }}; 
+
+
+let digitButtons = document.getElementsByClassName("digit");
+
+function displayNumbers() { 
+    console.log("the event listener is working");
+};
+
+for (let i=0; i < digitButtons.length; i++) { 
+    digitButtons[i].addEventListener("click", displayNumbers);
+};
+
+
+
