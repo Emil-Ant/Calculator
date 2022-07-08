@@ -28,15 +28,28 @@ if (operator === '+') {
 }}; 
 
 
-let digitButtons = document.getElementsByClassName("digit");
+let Buttons = document.querySelectorAll('.item');
+let displayScreen = document.querySelector('#calculator-display');
+let displayValue = 0; 
+displayScreen.innerHTML += displayValue; 
 
-function displayNumbers() { 
-    console.log("the event listener is working");
-};
+//event listener for each button
+Buttons.forEach(item => { 
+    addEventListener('click', (e) => { 
+        updateDisplay(e)
+    })
+});
 
-for (let i=0; i < digitButtons.length; i++) { 
-    digitButtons[i].addEventListener("click", displayNumbers);
-};
+
+//update displayValue variable
+let updateDisplay = (e) => { 
+    displayValue = e.target.id;
+    displayScreen.innerHTML = displayValue;
+}
+
+
+
+
 
 
 

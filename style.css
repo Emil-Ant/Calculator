@@ -9,7 +9,7 @@
   }
 
 
-.calculator-display { 
+#calculator-display { 
     width: 70%;
     font-size: 45px;
     height: 60px;
@@ -21,16 +21,15 @@
     padding-left: 60px;
 }
 
-.calculator-keys { 
+.item { 
     display: grid;
     grid-template-columns: auto auto auto; 
     padding: 10px; 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-}
-
-.digit { 
     text-align: center;
     font-size: 25px; 
     padding: 5px; 
 }
+
+
