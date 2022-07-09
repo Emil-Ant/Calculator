@@ -10,15 +10,13 @@
 
 
 #calculator-display { 
-    width: 70%;
+    width: 400px;
     font-size: 45px;
     height: 60px;
     border: none;
     background-color: grey;
     color: #fff;
     text-align: right;
-    padding-right: 60px;
-    padding-left: 60px;
 }
 
 .item { 

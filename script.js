@@ -17,20 +17,24 @@ function divide(a, b) {
 
 // operate function that takes an operator (with quotes for now) and 2 numbers and calls the matching function
 function operate(operator, x, y) { 
-if (operator === '+') { 
-    return add(x, y);
-} else if (operator === '-') { 
-    return subtract(x, y); 
-} else if (operator === '*') { 
-    return multiply(x, y); 
-} else if (operator = '/') { 
-    return divide(x, y);
-}}; 
+  switch (operator) { 
+    case '+': 
+      return add(x, y);
+    case '-': 
+      return subtract(x, y); 
+    case '*': 
+      return multiply(x, y);
+    case '/': 
+      return divide(x, y);
+  }
+};
+
+
 
 
 let Buttons = document.querySelectorAll('.item');
 let displayScreen = document.querySelector('#calculator-display');
-let displayValue = 0; 
+let displayValue = ''; 
 displayScreen.innerHTML += displayValue; 
 
 //event listener for each button
@@ -44,8 +48,10 @@ Buttons.forEach(item => {
 //update displayValue variable
 let updateDisplay = (e) => { 
     displayValue = e.target.id;
-    displayScreen.innerHTML = displayValue;
+    displayScreen.innerHTML += displayValue;
 }
+
+
 
 
 
