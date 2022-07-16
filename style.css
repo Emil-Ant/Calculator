@@ -9,14 +9,18 @@
   }
 
 
-#calculator-display { 
+.calculator-display { 
     width: 400px;
-    font-size: 45px;
+    font-size: 30px;
     height: 60px;
     border: none;
     background-color: grey;
     color: #fff;
     text-align: right;
+}
+
+.previous-operand { 
+    font-size: 20px; 
 }
 
 .item { 

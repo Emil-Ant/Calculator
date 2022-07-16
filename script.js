@@ -1,3 +1,16 @@
+//DOM elements 
+const numberButtons = document.querySelectorAll('.number-button');
+const displayScreen = document.querySelector('.calculator-display');
+const operatorButton = document.querySelectorAll('.operator'); 
+const currentOperand = document.querySelector('.current-operand');
+const previousOperand = document.querySelector('.previous-operand');
+const equalsKey = document.querySelector('.equals-key'); 
+
+currentOperand.textContent = ' '; 
+previousOperand.textContent = ' ';
+
+
+
 // functions for calculations
 function add(a, b) { 
     return a + b; 
@@ -30,25 +43,43 @@ function operate(operator, x, y) {
 };
 
 
-
-
-let Buttons = document.querySelectorAll('.item');
-let displayScreen = document.querySelector('#calculator-display');
 let displayValue = ''; 
-displayScreen.innerHTML += displayValue; 
+let firstNumber = '';
+let clickedOperator = '';
+currentOperand.textContent = 0;
 
-//event listener for each button
-Buttons.forEach(item => { 
-    addEventListener('click', (e) => { 
-        updateDisplay(e)
-    })
+
+numberButtons.forEach((number) => { 
+  number.addEventListener('click', function() { 
+    displayValue += number.value;
+    currentOperand.textContent = displayValue;
+  })
 });
 
+operatorButton.forEach((operator => { 
+  operator.addEventListener('click', function() { 
+    if (firstNumber && displayValue) { 
+      displayResult(); 
+    }
+    // save first number 
+    firstNumber = displayValue;
+    // get the operator that was clicked
+    clickedOperator = operator.textContent;
+    previousOperand.textContent = displayValue + clickedOperator; 
+    displayValue = '';
+  })
+}))
 
-//update displayValue variable
-let updateDisplay = (e) => { 
-    displayValue = e.target.id;
-    displayScreen.innerHTML += displayValue;
+equalsKey.addEventListener('click', function() { 
+  displayResult(); 
+})
+
+function displayResult() { 
+result = operate(clickedOperator, parseFloat(firstNumber), parseFloat(displayValue))
+currentOperand.textContent = result; 
+previousOperand.textContent = firstNumber + ' ' + clickedOperator + ' ' + displayValue;
+displayValue = result;
+console.log('FirstNumber' + firstNumber + 'displayValueStored' + displayValue);
 }
 
 
