@@ -5,6 +5,7 @@ const operatorButton = document.querySelectorAll('.operator');
 const currentOperand = document.querySelector('.current-operand');
 const previousOperand = document.querySelector('.previous-operand');
 const equalsKey = document.querySelector('.equals-key'); 
+const clearButton = document.querySelector('.clear-button'); 
 
 currentOperand.textContent = ' '; 
 previousOperand.textContent = ' ';
@@ -42,7 +43,6 @@ function operate(operator, x, y) {
   }
 };
 
-
 let displayValue = ''; 
 let firstNumber = '';
 let clickedOperator = '';
@@ -68,11 +68,11 @@ operatorButton.forEach((operator => {
     previousOperand.textContent = displayValue + clickedOperator; 
     displayValue = '';
   })
-}))
+}));
 
 equalsKey.addEventListener('click', function() { 
   displayResult(); 
-})
+});
 
 function displayResult() { 
 result = operate(clickedOperator, parseFloat(firstNumber), parseFloat(displayValue))
@@ -81,6 +81,14 @@ previousOperand.textContent = firstNumber + ' ' + clickedOperator + ' ' + displa
 displayValue = result;
 console.log('FirstNumber' + firstNumber + 'displayValueStored' + displayValue);
 }
+
+
+clearButton.addEventListener('click', function() { 
+  previousOperand.textContent = 0; 
+  currentOperand.textContent = ''; 
+  displayValue = '';
+  firstNumber = ''; 
+});
 
 
 
