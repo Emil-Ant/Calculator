@@ -10,6 +10,7 @@
     display: flex; 
     flex-direction: column; 
     align-content: stretch;  
+    background-color: rgb(213, 213, 213)
   }
 
 
@@ -23,6 +24,7 @@
     text-align: right;
     border-top-right-radius: 10px; 
     border-top-left-radius: 10px; 
+    font-weight: bold; 
 }
 
 .previous-operand { 
@@ -40,7 +42,7 @@
 
 .equals-key { 
     background-color: darkseagreen;
-    font-weight: bold; 
+    
 }
 
 .equals-key:hover { 
@@ -49,7 +51,7 @@
 
 .clear-button { 
     background-color: darksalmon;  
-    font-weight: bold; 
+    
 }
 
 .clear-button:hover { 
@@ -60,11 +62,18 @@ button {
     height: 60px; 
     width: 70px; 
     border: 0.5px solid  #ccc; 
+    font-weight: bold; 
 }
 
 button:hover { 
     background-color:  #ccc;
 }
+
+.warning-text { 
+    display: flex; 
+    border: 1px solid red; 
+    justify-content: center;
+} 
 
 
 

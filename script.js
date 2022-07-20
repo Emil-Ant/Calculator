@@ -85,13 +85,13 @@ if (clickedOperator == '/' && displayValue == 0){
   currentOperand.textContent = result; 
   previousOperand.textContent = firstNumber + ' ' + clickedOperator + ' ' + displayValue;
   displayValue = result;
-  console.log('FirstNumber' + firstNumber + 'displayValueStored' + displayValue);
 }};
 
 // clear button event listener
 clearButton.addEventListener('click', function() { 
   previousOperand.textContent = ''; 
   currentOperand.textContent = 0; 
+  clickedOperator = ''
   displayValue = '';
   firstNumber = ''; 
 });
