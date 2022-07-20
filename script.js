@@ -43,12 +43,13 @@ function operate(operator, x, y) {
   }
 };
 
+// display values and clickedOperator variables
 let displayValue = ''; 
 let firstNumber = '';
 let clickedOperator = '';
 currentOperand.textContent = 0;
 
-
+// Event listener that displays numbers
 numberButtons.forEach((number) => { 
   number.addEventListener('click', function() { 
     displayValue += number.value;
@@ -74,18 +75,23 @@ equalsKey.addEventListener('click', function() {
   displayResult(); 
 });
 
+// function to have result, numbers and operators show up on calculator displays
 function displayResult() { 
-result = operate(clickedOperator, parseFloat(firstNumber), parseFloat(displayValue))
-currentOperand.textContent = result; 
-previousOperand.textContent = firstNumber + ' ' + clickedOperator + ' ' + displayValue;
-displayValue = result;
-console.log('FirstNumber' + firstNumber + 'displayValueStored' + displayValue);
-}
+if (clickedOperator == '/' && displayValue == 0){ 
+  alert("Don't divide by zero!");
+  clearButton.click(); 
+} else { 
+  result = operate(clickedOperator, parseFloat(firstNumber), parseFloat(displayValue))
+  currentOperand.textContent = result; 
+  previousOperand.textContent = firstNumber + ' ' + clickedOperator + ' ' + displayValue;
+  displayValue = result;
+  console.log('FirstNumber' + firstNumber + 'displayValueStored' + displayValue);
+}};
 
-
+// clear button event listener
 clearButton.addEventListener('click', function() { 
-  previousOperand.textContent = 0; 
-  currentOperand.textContent = ''; 
+  previousOperand.textContent = ''; 
+  currentOperand.textContent = 0; 
   displayValue = '';
   firstNumber = ''; 
 });

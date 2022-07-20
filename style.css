@@ -1,5 +1,5 @@
 .calculator {
-    border: 1px solid black;
+    border: 1px solid rgba(105, 105, 105, 0.828);
     border-radius: 10px;
     position: absolute;
     top: 50%;
