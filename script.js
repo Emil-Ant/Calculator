@@ -78,7 +78,7 @@ equalsKey.addEventListener('click', function() {
 // function to have result, numbers and operators show up on calculator displays
 function displayResult() { 
 if (clickedOperator == '/' && displayValue == 0){ 
-  alert("Don't divide by zero!");
+  alert("You know you can't do that mellow!");
   clearButton.click(); 
 } else { 
   result = operate(clickedOperator, parseFloat(firstNumber), parseFloat(displayValue))
